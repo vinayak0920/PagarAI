@@ -1,0 +1,104 @@
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    form {
+        width: 80%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    div {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    textarea {
+        resize: vertical;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<form id="financial-form" action="#" method="post">
+    <div>
+        <label for="startup-name">Startup Name:</label>
+        <input type="text" id="startup-name" name="startup-name" required>
+    </div>
+    
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div>
+        <label for="balance-sheet">Balance Sheet (JSON):</label>
+        <textarea id="balance-sheet" name="balance-sheet" rows="5" required></textarea>
+    </div>
+    
+    <div>
+        <label for="income-statement">Income Statement (JSON):</label>
+        <textarea id="income-statement" name="income-statement" rows="5" required></textarea>
+    </div>
+    
+    <div>
+        <label for="cash-flow">Cash Flow (JSON):</label>
+        <textarea id="cash-flow" name="cash-flow" rows="5" required></textarea>
+    </div>
+    
+    <div>
+        <label for="investment-thesis">Investment Thesis:</label>
+        <textarea id="investment-thesis" name="investment-thesis" rows="5" required></textarea>
+    </div>
+    
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<script>
+    document.getElementById('financial-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = {
+            startupName: document.getElementById('startup-name').value,
+            email: document.getElementById('email').value,
+            balanceSheet: document.getElementById('balance-sheet').value,
+            incomeStatement: document.getElementById('income-statement').value,
+            cashFlow: document.getElementById('cash-flow').value,
+            investmentThesis: document.getElementById('investment-thesis').value
+        };
+        
+        console.log('Form Data:', formData);
+    });
+</script>
